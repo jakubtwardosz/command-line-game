@@ -4,24 +4,44 @@ namespace command_line_game
 {
     class Program
     {
+        int[] board = new int[9];
+
         static void Main(string[] args)
         {
-            string A = "1";
-            string B = "2";
-            string C = "3";
-            string D = "4";
-            string E = "5";
-            string F = "6";
-            string G = "7";
-            string H = "8";
-            string I = "9";
+            introduction();
+            while (hasWon() == false)
+            {
+                askData("X");
+                if (hasWon() == true)
+                    break;
+                askData("0");
+            }          
+        }
 
+        static void askData(String player)
+        {
+            Console.WriteLine("Player: " + player);
+            Console.WriteLine("Please enter your selection.");
+            int selection = Convert.ToInt32(Console.ReadLine());
+        }
+
+        static void drawBoard()
+        {
+
+        }
+
+        static Boolean hasWon()
+        {
+            return false;
+        }
+
+        static void introduction()
+        {
             Console.Title = "Kółko i krzyżyk";
             Console.WriteLine("Witaj w grze kółko i krzyżyk!");
             Console.WriteLine("Wciśnij jakiś klawisz... ");
             Console.ReadLine();
             Console.Clear();
-
         }
     }
 }
