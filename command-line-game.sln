@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arena", "Arena\Arena.csproj", "{4AD7FB25-6A78-4078-B8AB-9D014114FD5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9653AACC-A87A-4753-8B57-F05C9444763D} = {9653AACC-A87A-4753-8B57-F05C9444763D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArenaLibrary", "ArenaLibrary\ArenaLibrary.csproj", "{9653AACC-A87A-4753-8B57-F05C9444763D}"
 EndProject
