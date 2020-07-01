@@ -4,10 +4,22 @@ namespace command_line_game
 {
     class Program
     {
-        int[] board = new int[9];
+        static String[] board = new String[9];
+
+        static void initializeVariable()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                board[i] = i.ToString();
+            }
+        }
+
+
+
 
         static void Main(string[] args)
         {
+            initializeVariable();
             introduction();
             while (hasWon() == false)
             {
@@ -22,17 +34,31 @@ namespace command_line_game
         {
             Console.WriteLine("Player: " + player);
             Console.WriteLine("Please enter your selection.");
+            drawBoard();
             int selection = Convert.ToInt32(Console.ReadLine());
+
+            board[selection] = player;
         }
 
         static void drawBoard()
         {
 
+            for (int i = 0; i < 9; i += 3) 
+                Console.WriteLine(board[i] + "|" + board[i + 1] + "|" + board[i + 2]);
+
+
         }
 
         static Boolean hasWon()
         {
-            return false;
+            for (int i = 0; i < 7; i+=3)
+            {
+                if (board[i].Equals(board[i + 1]) && board[i + 1].Equals(board[i + 2]))
+
+                    return true;
+
+            }
+            if (board[0].Equals(board[3]) && board)
         }
 
         static void introduction()
