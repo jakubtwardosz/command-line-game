@@ -1,30 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ArenaLibrary
 {
-    public class Warrior
+    class Dragon
     {
+
         // Name Health MaxAttack BlockAttack
-        public string Name { get; set; } = "Warrior";
-        public double Health { get; set; } = 0;
-        public double MaxAttack { get; set; } = 0;
+        public string Name { get; set; } = "Rat";
+        public double Health { get; set; } = 100;
+        public double MaxAttack { get; set; } = 30;
         public double MaxBlock { get; set; } = 0;
-        public double ExperiencePoints { get; set; } = 0; 
-        public double Level { get; set; } = 0;
 
         // Random numbers
 
         Random rnd = new Random();
 
         // Constructor
-        public Warrior(string name = "Warrior", double health = 0, double maxAttack = 0, double maxBlock = 0, double experiencePoints = 0, double level = 1)
+        public Dragon(string name = "Rat", double health = 0, double maxAttack = 0, double maxBlock = 0)
         {
             Name = name;
             Health = health;
             MaxAttack = maxAttack;
             MaxBlock = maxBlock;
-            ExperiencePoints = experiencePoints;
-            Level = level;
         }
 
         // Attack 
@@ -44,6 +43,5 @@ namespace ArenaLibrary
         {
             return rnd.Next(1, (int)MaxBlock);
         }
-
     }
 }
