@@ -21,7 +21,6 @@ namespace ArenaLibrary
         {
             GenerateWeapons();
             GenerateMonsters();
-
         }
 
         private static void GenerateWeapons()

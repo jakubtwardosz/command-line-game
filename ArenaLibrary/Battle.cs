@@ -7,17 +7,17 @@ namespace ArenaLibrary
 
 
 
-        /*public static string GetAttackResult(Player player, Monster monster)
+        public static string GetAttackResult(Player player, Monster monster)
         {
-            *//*Weapon currentWeapon = (Weapon)player.CurrentWeapon;*/
+            Weapon currentWeapon = player.Inventory.Find(p => p.ID == World.ITEM_ID_RUSTY_SWORD);
+
+            int damageToMonster = RandomNumberGenerator.NumberBetween(currentWeapon.MinimumDamage, currentWeapon.MaximumDamage);
 
 
 
 
-           /* int damageToMonster = RandomNumberGenerator.NumberBetween(Player.c);*//*
 
-
-        }*/
+        }
 
         /*// Start Fight
         // WarriorA WarriorB
@@ -69,9 +69,9 @@ namespace ArenaLibrary
 
 
 
-        
 
 
-        
+
+
     }
 }

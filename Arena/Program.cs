@@ -14,20 +14,18 @@ namespace Arena
 
             string name = Console.ReadLine();
 
-            Player newPlayer = new Player(0, name, 10, 10, 1, 0, 1, 10);
-
-            newPlayer.Inventory.Add(new Weapon(World.ITEM_ID_RUSTY_SWORD, "Rusty sword", 5, 10));
+            Player newPlayer = new Player(0, name, 10, 10, 1, 0);
 
             Console.WriteLine("Hello, {0}!", newPlayer.Name);
 
+            newPlayer.Inventory.Add(new Weapon(World.ITEM_ID_RUSTY_SWORD, "Rusty sword", 5, 10));
+
+            Console.WriteLine("At the beginning you received a Rusty Sword!");            
+
             foreach (Weapon item in newPlayer.Inventory)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.Name);
             }
-
-
-
-
 
             do
             {
@@ -43,10 +41,13 @@ namespace Arena
                         Console.WriteLine();
                         break;
                     case 2:
+                        Console.WriteLine();
                         break;
                     case 3:
+                        Console.WriteLine();
                         break;
                     case 4:
+                        Console.WriteLine();
                         break;
                 }
             }
