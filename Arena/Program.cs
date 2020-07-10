@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ArenaLibrary;
 
 namespace Arena
@@ -13,9 +14,20 @@ namespace Arena
 
             string name = Console.ReadLine();
 
-            Warrior newPlayer = new Warrior(name);
+            Player newPlayer = new Player(0, name, 10, 10, 1, 0, 1, 10);
+
+            newPlayer.Inventory.Add(new Weapon(World.ITEM_ID_RUSTY_SWORD, "Rusty sword", 5, 10));
 
             Console.WriteLine("Hello, {0}!", newPlayer.Name);
+
+            foreach (Weapon item in newPlayer.Inventory)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
+
 
             do
             {
@@ -28,7 +40,6 @@ namespace Arena
                         Environment.Exit(0);
                         break;
                     case 1:
-                        Battle.StartFight(newPlayer, newPlayer);
                         Console.WriteLine();
                         break;
                     case 2:

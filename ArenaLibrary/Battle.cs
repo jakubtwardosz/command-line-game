@@ -4,22 +4,31 @@ namespace ArenaLibrary
 {
     public class Battle
     {
-        // Start Fight
+
+
+
+        /*public static string GetAttackResult(Player player, Monster monster)
+        {
+            *//*Weapon currentWeapon = (Weapon)player.CurrentWeapon;*/
+
+
+
+
+           /* int damageToMonster = RandomNumberGenerator.NumberBetween(Player.c);*//*
+
+
+        }*/
+
+        /*// Start Fight
         // WarriorA WarriorB
-        public static void StartFight(Warrior warriorA, Warrior warriorB)
+        public static void StartFight(Player warriorA, Monster monster)
         {
 
             // Loop giving warrior a chance to attack and block each turn until 1 dies
 
             while (true)
             {
-                if (GetAttackResult(warriorA, warriorB) == "Game Over")
-                {
-                    Console.WriteLine("Game Over");
-                    break;
-                }
-
-                if (GetAttackResult(warriorB, warriorA) == "Game Over")
+                if (GetAttackResult(warriorA, monster) == "Game Over")
                 {
                     Console.WriteLine("Game Over");
                     break;
@@ -30,32 +39,32 @@ namespace ArenaLibrary
         // GetAttackResult
         // Warrior1, Warriotr2
 
-        public static string GetAttackResult(Warrior warrior1, Warrior warrior2)
+        public static string GetAttackResult(Player warrior1, Monster monster)
         {
             double warrior1AttAmt = warrior1.Attack();
-            double warrior2BlkAmt = warrior2.Block();
+            double monsterBlkAmt = monster.Block();
 
-            double dmgToWarrior2 = warrior1AttAmt - warrior2BlkAmt;
+            double dmgTomonster = warrior1AttAmt - monsterBlkAmt;
 
-            if (dmgToWarrior2 > 0)
+            if (dmgTomonster > 0)
             {
-                warrior2.Health = warrior2.Health - dmgToWarrior2;
+                monster.Health = monster.Health - dmgTomonster;
             }
-            else dmgToWarrior2 = 0;
+            else dmgTomonster = 0;
 
-            Console.WriteLine("{0} Attacks {1} and Deals {2} Damage", warrior1.Name, warrior2.Name, dmgToWarrior2);
+            Console.WriteLine("{0} Attacks {1} and Deals {2} Damage", warrior1.Name, monster.Name, dmgTomonster);
 
-            Console.WriteLine("{0} Has {1} Health \n", warrior2.Name, warrior2.Health);
+            Console.WriteLine("{0} Has {1} Health \n", monster.Name, monster.Health);
 
             // death
-            if (warrior2.Health <= 0)
+            if (monster.Health <= 0)
             {
-                Console.WriteLine("{0} has Died and {1} is victorius \n", warrior2.Name, warrior1.Name);
+                Console.WriteLine("{0} has Died and {1} is victorius \n", monster.Name, warrior1.Name);
                 return "Game Over";
             }
             else return "Fight again";
 
-        }
+        }*/
 
 
 
