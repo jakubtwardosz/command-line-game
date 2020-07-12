@@ -28,7 +28,26 @@ namespace Arena
                         Environment.Exit(0);
                         break;
                     case 1:
-                        DifficultyMenu();
+                        int DifficultyLevelValue = DifficultyMenu();
+
+                        Monster result = null;
+
+                        switch (DifficultyLevelValue)
+                        {
+                            case 1:
+                                result = new Monster(0, "Rat", 20, 20, 5, 10, 1);
+                                break;
+                            case 2:
+                                result = new Monster(0, "Rat", 20, 20, 5, 10, 1);
+                                break;
+                            case 3:
+                                result = new Monster(0, "Rat", 20, 20, 5, 10, 1);
+                                break;
+                        }
+
+                        Battle.StartFight(Hero, result);
+
+
                         break;
                     case 2:
                         Console.WriteLine("You have {0} experience points", Hero.ExperiencePoints);
@@ -36,13 +55,6 @@ namespace Arena
                 }
             }
             while (true);
-
-
-            Monster monster = new Monster(0, "Monster", 5, 5, 1, 5, 10);
-
-            Battle.StartFight(Hero, monster);
-
-
         }
 
         private static void PrintMenu()
@@ -54,12 +66,17 @@ namespace Arena
             Console.Write("Choose action: ");
         }
 
-        private static void DifficultyMenu()
+        private static int DifficultyMenu()
         {
+
             Console.WriteLine("Choose a difficulty level:");
             Console.WriteLine("\t1 - Easy");
             Console.WriteLine("\t2 - Medium");
             Console.WriteLine("\t3 - Hard");
+
+            int choice = int.Parse(Console.ReadLine());
+
+            return choice;
         }
     }
 }
