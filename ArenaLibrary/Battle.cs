@@ -4,74 +4,40 @@ namespace ArenaLibrary
 {
     public class Battle
     {
-
-
-
-        public static string GetAttackResult(Player player, Monster monster)
+        public static void StartFight(LivingCreature a, LivingCreature b)
         {
-            Weapon currentWeapon = player.Inventory.Find(p => p.ID == World.ITEM_ID_RUSTY_SWORD);
-
-            int damageToMonster = RandomNumberGenerator.NumberBetween(currentWeapon.MinimumDamage, currentWeapon.MaximumDamage);
-
-
-
-
-
-        }
-
-        /*// Start Fight
-        // WarriorA WarriorB
-        public static void StartFight(Player warriorA, Monster monster)
-        {
-
-            // Loop giving warrior a chance to attack and block each turn until 1 dies
-
             while (true)
             {
-                if (GetAttackResult(warriorA, monster) == "Game Over")
+                if (GetAttackResult(a, b) == "Game Over")
                 {
                     Console.WriteLine("Game Over");
                     break;
                 }
             }
-
         }
-        // GetAttackResult
-        // Warrior1, Warriotr2
 
-        public static string GetAttackResult(Player warrior1, Monster monster)
+        public static string GetAttackResult(LivingCreature a, LivingCreature b)
         {
-            double warrior1AttAmt = warrior1.Attack();
-            double monsterBlkAmt = monster.Block();
+            int damageToCreature = RandomNumberGenerator.NumberBetween(a.MinimumDamage, a.MaximumDamage);
 
-            double dmgTomonster = warrior1AttAmt - monsterBlkAmt;
-
-            if (dmgTomonster > 0)
+            if (damageToCreature > 0)
             {
-                monster.Health = monster.Health - dmgTomonster;
+                b.CurrentHitPoints = b.CurrentHitPoints - damageToCreature;
             }
-            else dmgTomonster = 0;
+            else damageToCreature = 0;
 
-            Console.WriteLine("{0} Attacks {1} and Deals {2} Damage", warrior1.Name, monster.Name, dmgTomonster);
+            Console.WriteLine("{0} Attacks {1} and Deals {2} Damage", a.Name, b.Name, damageToCreature);
 
-            Console.WriteLine("{0} Has {1} Health \n", monster.Name, monster.Health);
+            Console.WriteLine("{0} Has {1} Health \n", b.Name, b.CurrentHitPoints);
 
             // death
-            if (monster.Health <= 0)
+            if (b.CurrentHitPoints <= 0)
             {
-                Console.WriteLine("{0} has Died and {1} is victorius \n", monster.Name, warrior1.Name);
+                Console.WriteLine("{0} has Died and {1} is victorius \n", b.Name, a.Name);
                 return "Game Over";
             }
             else return "Fight again";
 
-        }*/
-
-
-
-
-
-
-
-
+        }
     }
 }

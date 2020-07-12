@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ArenaLibrary
 {
-    class DifficultyLevel
+    public class DifficultyLevel
     {
         private Monster currentMonster;
 
@@ -22,6 +22,6 @@ namespace ArenaLibrary
             {
                 currentMonster = World.MonsterByID(3);
             }
-        }
+        }        
     }
 }

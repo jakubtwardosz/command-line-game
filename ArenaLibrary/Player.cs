@@ -5,15 +5,17 @@ namespace ArenaLibrary
 {
     public class Player : LivingCreature
     {
-        public int ExperiencePoints { get; set; }
         public int Level { get; set; }
-        public List<Weapon> Inventory { get; set; }
+        public int ExperiencePoints { get; set; }
+        
 
-        public Player(int id, string name, int currentHitPoints, int maximumHitPoints, int level, int experiencePoints) : base (id, name, currentHitPoints, maximumHitPoints)
+        public Player(int id, string name, int currentHitPoints, int maximumHitPoints, int minimumDamage, int maximumDamage, int level, int experiencePoints) : base (id, name, currentHitPoints, maximumHitPoints, minimumDamage, maximumDamage)
         {
-            ExperiencePoints = experiencePoints;
             Level = level;
-            Inventory = new List<Weapon>();
+            ExperiencePoints = experiencePoints;
         }
     }
 }
+
+
+

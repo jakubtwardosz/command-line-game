@@ -32,9 +32,9 @@ namespace ArenaLibrary
 
         private static void GenerateMonsters()
         {            
-            Monsters.Add(new Monster(MONSTER_ID_RAT, "Rat", 5, 3, 10, 10));
+/*            Monsters.Add(new Monster(MONSTER_ID_RAT, "Rat", 5, 3, 10, 10));
             Monsters.Add(new Monster(MONSTER_ID_KNIGHT, "Knight", 5, 3, 10, 10));
-            Monsters.Add(new Monster(MONSTER_ID_DRAGON, "Dragon", 5, 3, 10, 10));
+            Monsters.Add(new Monster(MONSTER_ID_DRAGON, "Dragon", 5, 3, 10, 10));*/
         }
 
         public static Weapon WeaponByID(int id)
