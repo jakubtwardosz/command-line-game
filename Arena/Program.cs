@@ -35,18 +35,17 @@ namespace Arena
                         switch (DifficultyLevelValue)
                         {
                             case 1:
-                                result = new Monster(0, "Rat", 20, 20, 5, 10, 1);
+                                result = new Monster(0, "Rat", 5, 5, 1, 5, 5, World.ITEM_ID_RUSTY_SWORD);
                                 break;
                             case 2:
-                                result = new Monster(0, "Rat", 20, 20, 5, 10, 1);
+                                result = new Monster(1, "Knight", 15, 15, 5, 10, 15, World.ITEM_ID_CLUB);
                                 break;
                             case 3:
-                                result = new Monster(0, "Rat", 20, 20, 5, 10, 1);
+                                result = new Monster(2, "Dragon", 20, 20, 10, 20, 20, World.ITEM_ID_WSEI_SWORD);
                                 break;
-                        }
-
+                        }            
+                        
                         Battle.StartFight(Hero, result);
-
 
                         break;
                     case 2:
@@ -73,6 +72,7 @@ namespace Arena
             Console.WriteLine("\t1 - Easy");
             Console.WriteLine("\t2 - Medium");
             Console.WriteLine("\t3 - Hard");
+            Console.Write("Choose action: ");
 
             int choice = int.Parse(Console.ReadLine());
 

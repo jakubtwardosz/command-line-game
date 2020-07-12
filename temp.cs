@@ -18,38 +18,7 @@
     
 }
 
-private static void PrintMenu()
-{
-    Console.WriteLine("Avalible actions:");
-    Console.WriteLine("\t0 - Quit");
-    Console.WriteLine("\t1 - Start fighting!");
-    Console.WriteLine("\t2 - Check your items");
-    Console.WriteLine("\t3 - Check the level of experience");
-    Console.WriteLine("\t4 - Choose a difficulty level");
-    Console.Write("Choose action: ");
-}
-
-
-
-    DifficultyLevel difficultyLevel = new SelectDifficultyLevel();
 
 
 
 
-
-
-    int action = int.Parse(Console.ReadLine()); // wczytaj numer polecenia
-    switch (action)
-    {
-        case 0:
-            break;
-        case 1:
-            break;
-        case 2:
-            Console.WriteLine();
-            break;
-        case 3:
-            Console.WriteLine();
-            break;
-    }
-}
